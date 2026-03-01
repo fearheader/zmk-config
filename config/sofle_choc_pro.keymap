@@ -38,20 +38,20 @@
 
         default_layer {
             display-name = "Main";
-            // ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
-            // │  `   │  1   │  2   │  3   │  4   │  5   │                    │  6   │  7   │  8   │  9   │  0   │  -   │
-            // ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-            // │ TAB  │  Q   │  W   │  E   │  R   │  T   │                    │  Z   │  U   │  I   │  O   │  P   │  =   │
-            // ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-            // │LOWER │  A   │  S   │  D   │  F   │  G   │                    │  H   │  J   │  K   │  L   │  ;   │  '   │
-            // ├──────┼──────┼──────┼──────┼──────┼──────┼──────┐    ┌──────┼──────┼──────┼──────┼──────┼──────┼──────┤
-            // │RAISE │  Y   │  X   │  C   │  V   │  B   │ ESC  │    │PSCRN │  N   │  M   │  ,   │  .   │  /   │  \   │
+            // ┌──────┬──────┬──────┬──────┬──────┬──────┐                     ┌──────┬──────┬──────┬──────┬──────┬──────┐
+            // │  `   │  1   │  2   │  3   │  4   │  5   │                     │  6   │  7   │  8   │  9   │  0   │  -   │
+            // ├──────┼──────┼──────┼──────┼──────┼──────┤                     ├──────┼──────┼──────┼──────┼──────┼──────┤
+            // │ TAB  │  Q   │  W   │  E   │  R   │  T   │                     │  Z   │  U   │  I   │  O   │  P   │  =   │
+            // ├──────┼──────┼──────┼──────┼──────┼──────┤                     ├──────┼──────┼──────┼──────┼──────┼──────┤
+            // │LOWER │  A   │  S   │  D   │  F   │  G   │                     │  H   │  J   │  K   │  L   │  ;   │  '   │
+            // ├──────┼──────┼──────┼──────┼──────┼──────┼──────┐       ┌──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+            // │RAISE │  Y   │  X   │  C   │  V   │  B   │ ESC  │       │PSCRN │  N   │  M   │  ,   │  .   │  /   │  \   │
             // └──────┴──────┴──────┼──────┼──────┼──────┼──────┼────┤  ├────┼──────┼──────┼──────┼──────┼──────┴──────┘
-            //                      │LCTRL │ LALT │ DEL  │SHIFT │ ENT│  │SPC │ BSPC │SUPER│  [   │  ]   │
+            //                      │LCTRL │ LALT │ DEL  │SHIFT │ ENT│  │SPC │ BSPC │SUPER │  [   │  ]   │
             //                      └──────┴──────┴──────┴──────┴────┘  └────┴──────┴──────┴──────┴──────┘
             //
             // Shift: tap = sticky shift, double tap = caps word, hold = shift
-            // Encoders: L rotate = ←/→, L press = ESC | R rotate = scroll, R press = PrtSc
+            // Encoders: L rotate = ←/→, L press = ESC | R rotate = ↑/↓, R press = PrtSc
             bindings = <
                 &kp GRAVE  &kp N1 &kp N2 &kp N3    &kp N4   &kp N5                             &kp N6    &kp N7   &kp N8    &kp N9   &kp N0   &kp FSLH
                 &kp TAB    &kp Q  &kp W  &kp E     &kp R    &kp T                              &kp Z     &kp U    &kp I     &kp O    &kp P    &kp BSLH
@@ -60,21 +60,21 @@
                                           &kp LCTRL &kp LALT &kp DEL  &td_shift    &kp RET      &kp SPACE &kp BSPC &kp LGUI  &kp LBKT &kp RBKT
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
 
         lower_layer {
             display-name = "Lower";
-            // ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
-            // │ ESC  │  F1  │  F2  │  F3  │  F4  │  F5  │                    │  F6  │  F7  │  F8  │  F9  │ F10  │ F11  │
-            // ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-            // │      │      │      │      │      │      │                    │      │  ü   │      │  ö   │      │      │
-            // ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
-            // │      │  ä   │  ß   │      │      │      │                    │      │      │  ↑   │      │      │      │
+            // ┌──────┬──────┬──────┬──────┬──────┬──────┐                  ┌──────┬──────┬──────┬──────┬──────┬──────┐
+            // │ ESC  │  F1  │  F2  │  F3  │  F4  │  F5  │                  │  F6  │  F7  │  F8  │  F9  │ F10  │ F11  │
+            // ├──────┼──────┼──────┼──────┼──────┼──────┤                  ├──────┼──────┼──────┼──────┼──────┼──────┤
+            // │      │      │      │      │      │      │                  │      │  ü   │      │  ö   │      │      │
+            // ├──────┼──────┼──────┼──────┼──────┼──────┤                  ├──────┼──────┼──────┼──────┼──────┼──────┤
+            // │      │  ä   │  ß   │      │      │      │                  │      │      │  ↑   │      │      │      │
             // ├──────┼──────┼──────┼──────┼──────┼──────┼──────┐    ┌──────┼──────┼──────┼──────┼──────┼──────┼──────┤
             // │      │      │      │      │      │      │      │    │      │      │  ←   │  ↓   │  →   │      │      │
             // └──────┴──────┴──────┼──────┼──────┼──────┼──────┤    ├──────┼──────┼──────┼──────┼──────┴──────┴──────┘
-            //                      │      │      │      │      │    │      │      │      │      │      │      │
+            //                      │      │      │SUPER │      │    │      │      │      │      │      │      
             //                      └──────┴──────┴──────┴──────┘    └──────┴──────┴──────┴──────┴──────┘
             //
             // Umlauts via US-International: RALT+A=ä, RALT+S=ß, RALT+U=ü, RALT+O=ö
@@ -84,10 +84,10 @@
                 &trans  &trans    &trans    &trans &trans &trans                            &trans &kp RA(Y) &trans   &kp RA(P) &trans    &kp F12
                 &trans    &kp RA(Q) &kp RA(S) &trans &trans &trans                           &trans &trans    &kp UP   &trans    &trans    &trans
                 &mo RAISE &trans    &trans    &trans &trans &trans  &trans       &trans        &trans &kp LEFT  &kp DOWN &kp RIGHT &trans    &trans
-                                             &trans &trans &trans &trans       &trans        &trans &trans    &trans   &trans    &trans
+                                             &trans &trans &kp LGUI &trans       &trans        &trans &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
 
         raise_layer {
@@ -114,7 +114,7 @@
                                                       &trans       &trans       &trans       &trans       &trans    &trans    &trans &trans &trans   &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
     };
 };
